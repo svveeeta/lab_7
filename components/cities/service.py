@@ -13,6 +13,10 @@ def get_all():
 
     return db["cities"]
 
+def enter_city():
+    input_str = input("Введите данные группы в формате json: ")
+    input_dict = json.loads(input_str)
+    return input_dict
 
 def update_id(id, city):
     db = json_service.get_database()

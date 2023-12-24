@@ -17,6 +17,12 @@ def get_all():
     return db["groups"]
 
 
+def enter_group():
+    input_str = input("Введите данные группы в формате json: ")
+    input_dict = json.loads(input_str)
+    return input_dict
+
+
 def update_id(id, groups):
     db = json_service.get_database()
 

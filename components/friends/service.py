@@ -14,23 +14,10 @@ def get_all():
 
     return db["friends"]
 
-
-'''
-# исправить, подумать
-def update_id(id, groups):
-    db = json_service.get_database()
-
-    for i, elem in enumerate(db["friends"]):
-        if elem["id"] == id:
-            elem["name"] = groups["name"]
-            # elem["contacts"] = users["contacts"]
-
-            json_service.set_database(db)
-            return elem
-
-    return {"message": f"Element with id {id} was not found"}
-'''
-
+def enter_friends():
+    input_str = input("Введите данные группы друзей в формате json: ")
+    input_dict = json.loads(input_str)
+    return input_dict
 
 def delete_group_of_friends_id(id):
     db = json_service.get_database()

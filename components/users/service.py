@@ -16,6 +16,12 @@ def get_all():
     return db["users"]
 
 
+def enter_user():
+    input_str = input("Введите данные пользователя в формате json: ")
+    input_dict = json.loads(input_str)
+    return input_dict
+
+
 def update_id(id, user):
     db = json_service.get_database()
 
